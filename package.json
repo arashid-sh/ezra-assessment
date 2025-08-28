@@ -1,0 +1,39 @@
+{
+  "name": "sully-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npxplaywright test --ui",
+    "report": "npxplaywright show-report",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "ai-scribe"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "AI Scribe Voice Flow Automation Framework using Playwright",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^24.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "3.6.2",
+    "typescript": "^5.9.2",
+    "eslint-plugin-playwright": "^2.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
+  }
+}
