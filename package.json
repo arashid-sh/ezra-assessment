@@ -5,8 +5,8 @@
   "scripts": {
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
-    "test:ui": "npxplaywright test --ui",
-    "report": "npxplaywright show-report",
+    "test:ui": "npx playwright test --ui",
+    "report": "npx playwright show-report",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier . --check",

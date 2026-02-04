@@ -5,16 +5,12 @@ export class LoginPage extends BasePage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
-  readonly errorMessage: Locator;
 
   constructor(page: Page) {
     super(page);
     this.emailInput = this.page.getByRole("textbox", { name: /email/i });
     this.passwordInput = this.page.getByRole("textbox", { name: /password/i });
-    this.loginButton = this.page.getByRole("button", {
-      name: /Login/i,
-    });
-    this.errorMessage = this.page.getByText("Invalid Email or Password!");
+    this.loginButton = this.page.getByRole("button", { name: "Submit" });
   }
 
   async login(email: string, password: string): Promise<void> {
