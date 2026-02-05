@@ -16,11 +16,8 @@ test.describe("Ezra Assessment", { tag: "@Smoke" }, () => {
     checkoutPage,
   }) => {
     await dashboardPage.bookAScanButton.click();
-
     await bookingPage.bookAScan();
-
     await checkoutPage.fillAndSubmitPaymentDetails(await creditCards.createCreditCard());
-
     await expect(page.locator(".scan-confirm__details-container")).toBeVisible();
   });
 
@@ -33,13 +30,11 @@ test.describe("Ezra Assessment", { tag: "@Smoke" }, () => {
   }) => {
     await dashboardPage.bookAScanButton.click();
     await bookingPage.bookAScan();
-
     const declinedCard = await creditCards.getSpecificInvalidCard("declined");
     await checkoutPage.fillAndSubmitPaymentDetails(declinedCard);
     const errorMessage = page
       .frameLocator('iframe[title="Secure payment input frame"]:not([aria-hidden="true"])')
       .getByText("Your card was declined");
-
     await expect(errorMessage).toBeVisible();
   });
 });

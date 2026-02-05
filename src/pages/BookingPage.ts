@@ -1,6 +1,10 @@
 import { BasePage } from "./BasePage";
 import { Locator, Page } from "@playwright/test";
 
+/**
+ * Page object for the Ezra scan booking flow.
+ * Handles selecting a scan plan, location, date, time, and submitting the booking.
+ */
 export class BookingPage extends BasePage {
   readonly cancelButton: Locator;
   readonly selectPlanContinueButton: Locator;
@@ -10,6 +14,10 @@ export class BookingPage extends BasePage {
   readonly firstAvailableTime: Locator;
   readonly scheduleYourScanContinueButton: Locator;
 
+  /**
+   * Creates a BookingPage instance and initializes booking flow locators.
+   * @param page - Playwright Page instance for browser interactions
+   */
   constructor(page: Page) {
     super(page);
     this.cancelButton = this.page.getByTestId("select-plan-cancel-btn");
@@ -21,6 +29,10 @@ export class BookingPage extends BasePage {
     this.scheduleYourScanContinueButton = this.page.locator('[data-test="submit"]');
   }
 
+  /**
+   * Completes the full scan booking flow by selecting the first available
+   * scan, location, date, and time, then submitting the schedule.
+   */
   async bookAScan(): Promise<void> {
     await this.firstScanInList.click();
     await this.selectPlanContinueButton.click();
